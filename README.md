@@ -26,9 +26,9 @@ Anyone with the link to the application (<a href="https://orian42.github.io/payr
 
 Begin use by clicking the "Add Employees" button and filling out the information as prompted.  Note: the salary should be entered as a number.  At the end of entering the information, a confirmation will be displayed asking if the user wants to add an additional employee.  The user should click "OK" to add another employee or "Cancel" to conclude that data input.
 
-![Screenshot of application prompting](assets/images/screenshot1.png)
+![Screenshot of application prompting](Assets/images/screenshot1.png)
 
-![Screenshot of application with completed names](assets/images/screenshot2.png)
+![Screenshot of application with completed names](Assets/images/screenshot2.png)
 
 ## Credits
 
