@@ -7,28 +7,27 @@ const employeesArray = new Array();
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   var addanother = true;
-
   while (addanother) {
     var salary = 0;  //a default of zero for the salary is required
 
-    //Get user input
+    //Get presented with a series of prompts asking for first name, last name, and salary
     var firstName = prompt("Enter first name:");
     var lastName = prompt("Enter last name:");
     salary = Number(prompt("Enter salary:"));
     if (isNaN(salary)) {
       while (isNaN(salary)) {
-      var salary = prompt("INPUT ERROR: Salary must be a number.  Enter salary:");
+      var salary = Number(prompt("INPUT ERROR: Salary must be a number.  Enter salary:"));
       }
     }
-
+    //Store responses in "employeeinfo" object
     const employeeinfo = {
       firstName:firstName,
       lastName:lastName, 
       salary:salary
     } 
-    //append "employeeinfo" array to "employeesArray"
+    //append "employeeinfo" object data to existing data in the "employeesArray" array
     employeesArray.push(employeeinfo);
-    //add another employee or finish
+    //Get prompted to continue or cancel 
     addanother = confirm("Do you want to add another employee?");
   }
 
@@ -44,15 +43,15 @@ const displayAverageSalary = function(employeesArray) {
     totalSalaries = totalSalaries + employeesArray[i].salary;
   }
   var aveSalary = totalSalaries/employeesArray.length;
-
-  console.log(totalSalaries);
-  console.log(employeesArray.length);
-  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is ${aveSalary}.`);
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${aveSalary.toFixed(2)}.`);
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+  const winner = Math.floor(Math.random()*employeesArray.length);
+
+  console.log(`Congratulations to ${employeesArray[winner].firstName} ${employeesArray[winner].lastName}, our random drawing winner!`)
 }
 
 /*
